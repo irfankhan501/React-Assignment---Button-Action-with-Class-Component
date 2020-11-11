@@ -5,15 +5,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      para: "",
-      id: "",
+      p: null,
     };
   }
   handleClick() {
     this.setState({
-      para:
-        "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy",
-      id: "para",
+      p: (
+        <p id="para">
+          Hello, I've learnt to use the full-stack evaluation tool. This makes
+          me so happy
+        </p>
+      ),
     });
   }
   render() {
@@ -22,7 +24,7 @@ class App extends Component {
         <button id="click" onClick={this.handleClick.bind(this)}>
           click me!
         </button>
-        <p id={this.state.id}>{this.state.para}</p>
+        {this.state.p}
       </div>
     );
   }
